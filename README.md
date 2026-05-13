@@ -1,6 +1,6 @@
 # frederic-bouchard.ca
 
-Plain static academic website.
+Plain static website.
 
 GitHub Pages:
 - Source: Deploy from a branch
