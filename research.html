@@ -4,57 +4,92 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research | Frédéric Bouchard</title>
+  <meta name="description" content="Personal academic website of Frédéric Bouchard.">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
+<header class="site-header">
+  <div class="nav-wrap">
     <a class="brand" href="index.html">Frédéric Bouchard</a>
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="research.html">Research</a>
       <a href="publications.html">Publications</a>
-      <a href="talks.html">Talks</a>
       <a href="cv.html">CV</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
+<main>
 
-  <main>
-    <section class="page-title">
-      <p class="kicker">Research</p>
-      <h1>Research</h1>
-      <p class="lede">
-        My research focuses on ultrafast quantum photonics: using short optical pulses, temporal modes, and nonlinear optics to process quantum information at high rates.
-      </p>
-    </section>
+<section class="page-title">
+  <p class="kicker">Research</p>
+  <h1>Research</h1>
+  <p class="lede">I study quantum photonic systems that use ultrafast optical pulses, temporal modes, and nonlinear optical interactions to process and measure quantum information.</p>
+</section>
 
-    <section class="section">
-      <div class="card-grid two">
-        <article class="card">
-          <h3>Ultrafast photonic quantum circuits</h3>
-          <p>Programmable optical circuits based on temporal encoding, enabling compact and passively stable approaches to quantum information processing.</p>
-        </article>
+<section class="section">
+  <article class="research-block">
+    <h2>Ultrafast time-bin encoding</h2>
+    <p class="section-intro">Temporal modes provide a natural route toward compact, phase-stable, and high-rate photonic quantum information processing. This work uses picosecond-scale time bins and programmable temporal interferometry to manipulate quantum states of light.</p>
+    <div class="related">
+      <div class="related-title">Related publications</div>
+      <ul>
+        <li>Programmable Photonic Quantum Circuits with Ultrafast Time-bin Encoding, Physical Review Letters (2024).</li>
+        <li>Photonic quantum walk with ultrafast time-bin encoding, Optica (2024).</li>
+        <li>Measuring ultrafast time-bin qudits, Physical Review A (2023).</li>
+        <li>Quantum communications with ultrafast time-bin qubits, PRX Quantum (2022).</li>
+      </ul>
+    </div>
+  </article>
 
-        <article class="card">
-          <h3>Telecom nonlinear quantum optics</h3>
-          <p>Quantum frequency translation, Kerr switching, squeezing, and photon-number-state manipulation in fiber-compatible wavelength bands.</p>
-        </article>
+  <article class="research-block">
+    <h2>Nonlinear quantum optics at telecom wavelengths</h2>
+    <p class="section-intro">Nonlinear optical interactions can reshape, translate, switch, and measure quantum states of light. I am particularly interested in telecom-compatible implementations using χ² and χ³ processes.</p>
+    <div class="related">
+      <div class="related-title">Related publications</div>
+      <ul>
+        <li>Efficient quantum frequency translation of broadband single photons by Bragg-scattering four-wave mixing, Optica Quantum (2025).</li>
+        <li>Time-of-flight spectroscopy with ultrafast all-optical gating, Optics Express (2025).</li>
+        <li>Perspectives on all-optical Kerr switching for quantum optical applications, Applied Physics Letters (2021).</li>
+      </ul>
+    </div>
+  </article>
 
-        <article class="card">
-          <h3>Quantum measurement</h3>
-          <p>High-speed measurement schemes including photon-number-resolving detection, homodyne-style measurements, and ultrafast tomography.</p>
-        </article>
+  <article class="research-block">
+    <h2>Quantum communication</h2>
+    <p class="section-intro">I have worked on quantum communication protocols using both ultrafast temporal encoding and high-dimensional structured photons, with an emphasis on realistic optical channels and noise tolerance.</p>
+    <div class="related">
+      <div class="related-title">Related publications</div>
+      <ul>
+        <li>Quantum communications with ultrafast time-bin qubits, PRX Quantum (2022).</li>
+        <li>Achieving ultimate noise tolerance in quantum communication, Physical Review Applied (2021).</li>
+        <li>Quantum cryptography with twisted photons through an outdoor underwater channel, Optics Express (2018).</li>
+        <li>High-dimensional intra-city quantum cryptography with structured photons, Optica (2017).</li>
+      </ul>
+    </div>
+  </article>
 
-        <article class="card">
-          <h3>Quantum networks and interconnects</h3>
-          <p>Photonic components and protocols that could support high-rate quantum communication and quantum networking.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+  <article class="research-block">
+    <h2>Structured light and high-dimensional quantum optics</h2>
+    <p class="section-intro">Earlier work focused on structured photons, optical angular momentum, high-dimensional quantum states, and their use in quantum cryptography, metrology, and fundamental optics.</p>
+    <div class="related">
+      <div class="related-title">Related publications</div>
+      <ul>
+        <li>High-dimensional quantum cloning and applications to quantum hacking, Science Advances (2017).</li>
+        <li>Observation of sub-luminal twisted light in vacuum, Optica (2016).</li>
+        <li>Achromatic orbital angular momentum generator, New Journal of Physics (2014).</li>
+      </ul>
+    </div>
+  </article>
+</section>
 
-  <footer>
-    <strong>Frédéric Bouchard</strong>
-    <span>Ultrafast quantum photonics · Quantum information · Nonlinear optics</span>
-  </footer>
+</main>
+<footer>
+  <div>
+    <strong>Frédéric Bouchard</strong><br>
+    Experimental physicist · Quantum photonics
+  </div>
+  <div>National Research Council Canada</div>
+</footer>
 </body>
 </html>

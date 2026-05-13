@@ -1,16 +1,8 @@
 # frederic-bouchard.ca
 
-This is a plain static website.
+Plain static academic website.
 
-## GitHub Pages setup
-
-Use:
-
-Settings → Pages → Build and deployment → Source: Deploy from a branch
-
-Then choose:
-
-Branch: main
-Folder: / root
-
-No GitHub Actions, no npm, and no build step are needed.
+GitHub Pages:
+- Source: Deploy from a branch
+- Branch: main
+- Folder: / root
