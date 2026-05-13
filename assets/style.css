@@ -7,8 +7,10 @@
   --muted: #626262;
   --soft: #f1eee8;
   --line: #e4ded4;
-  --accent: #6d5f4f;
+  --accent: #7c6650;
   --accent-dark: #3c342c;
+  --blue-soft: rgba(112, 132, 168, 0.14);
+  --gold-soft: rgba(196, 164, 114, 0.17);
   --max: 1080px;
 }
 
@@ -22,10 +24,38 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
   color: var(--ink);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.65;
+  background:
+    radial-gradient(circle at 12% 10%, var(--gold-soft), transparent 28rem),
+    radial-gradient(circle at 88% 8%, var(--blue-soft), transparent 32rem),
+    linear-gradient(180deg, #fbfaf8 0%, #f7f3ed 48%, #fbfaf8 100%);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.45;
+  background-image:
+    linear-gradient(rgba(60, 52, 44, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(60, 52, 44, 0.026) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto 0 0 0;
+  height: 38vh;
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(255,255,255,0.65), transparent);
 }
 
 a {
@@ -33,9 +63,9 @@ a {
 }
 
 .site-header {
-  border-bottom: 1px solid var(--line);
-  background: rgba(251, 250, 248, 0.92);
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(228, 222, 212, 0.92);
+  background: rgba(251, 250, 248, 0.86);
+  backdrop-filter: blur(14px);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -83,10 +113,10 @@ main {
 .hero {
   min-height: calc(100vh - 80px);
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.82fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.78fr);
   gap: 72px;
   align-items: center;
-  padding: 72px 0;
+  padding: 76px 0 68px;
 }
 
 .kicker {
@@ -126,13 +156,13 @@ h3 {
   font-family: "Source Serif 4", Georgia, serif;
   font-size: clamp(1.28rem, 2.3vw, 1.75rem);
   color: #3b3936;
-  max-width: 720px;
+  max-width: 740px;
   margin: 28px 0 0;
 }
 
 .sublede {
   color: var(--muted);
-  max-width: 660px;
+  max-width: 680px;
   font-size: 1.05rem;
   margin-top: 24px;
 }
@@ -151,7 +181,7 @@ h3 {
   border-radius: 999px;
   padding: 11px 16px;
   font-weight: 600;
-  background: var(--paper);
+  background: rgba(255,255,255,0.78);
 }
 
 .button.primary {
@@ -161,10 +191,12 @@ h3 {
 }
 
 .portrait-frame {
-  background: var(--soft);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.88), rgba(241,238,232,0.9));
   border: 1px solid var(--line);
-  border-radius: 32px;
+  border-radius: 34px;
   padding: 12px;
+  box-shadow: 0 28px 80px rgba(45, 38, 30, 0.10);
 }
 
 .portrait-frame img {
@@ -173,12 +205,43 @@ h3 {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: 50% 18%;
-  border-radius: 24px;
+  border-radius: 25px;
   filter: saturate(0.94);
 }
 
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--line);
+  margin-top: 36px;
+  max-width: 680px;
+}
+
+.stat {
+  background: rgba(255,255,255,0.7);
+  padding: 18px;
+}
+
+.stat strong {
+  display: block;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-top: 5px;
+}
+
 .section {
-  padding: 72px 0;
+  padding: 78px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -188,7 +251,7 @@ h3 {
 
 .section-intro {
   color: var(--muted);
-  max-width: 780px;
+  max-width: 800px;
   font-size: 1.05rem;
   margin: 0 0 34px;
 }
@@ -207,10 +270,11 @@ h3 {
 }
 
 .card {
-  background: rgba(255,255,255,0.72);
+  background: rgba(255,255,255,0.70);
   border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 24px;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 18px 60px rgba(45, 38, 30, 0.045);
 }
 
 .card p {
@@ -225,49 +289,16 @@ h3 {
 }
 
 .page-title {
-  padding: 72px 0 48px;
+  padding: 76px 0 48px;
 }
 
 .page-title h1 {
   font-size: clamp(3rem, 7vw, 5.4rem);
 }
 
-.content {
-  max-width: 860px;
-}
-
-.timeline {
-  display: grid;
-  gap: 16px;
-}
-
-.item {
-  display: grid;
-  grid-template-columns: 170px minmax(0, 1fr);
-  gap: 22px;
-  padding: 20px 0;
-  border-top: 1px solid var(--line);
-}
-
-.date {
-  color: var(--accent);
-  font-weight: 650;
-  font-size: 0.94rem;
-}
-
-.item-title {
-  font-weight: 650;
-  line-height: 1.3;
-}
-
-.item-meta {
-  color: var(--muted);
-  margin-top: 4px;
-}
-
 .publication-list {
   display: grid;
-  gap: 14px;
+  gap: 0;
 }
 
 .publication {
@@ -296,15 +327,16 @@ h3 {
 }
 
 .research-block {
-  padding: 32px 0;
+  padding: 34px 0;
   border-top: 1px solid var(--line);
 }
 
 .related {
   margin-top: 18px;
-  padding: 16px 18px;
-  background: var(--soft);
-  border-radius: 18px;
+  padding: 17px 19px;
+  background: rgba(241, 238, 232, 0.78);
+  border: 1px solid rgba(228, 222, 212, 0.9);
+  border-radius: 20px;
 }
 
 .related-title {
@@ -324,6 +356,20 @@ h3 {
 .related li {
   margin: 6px 0;
   color: #46413b;
+}
+
+.bio-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.bio-note {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.3rem;
+  line-height: 1.45;
+  color: #3b3936;
 }
 
 footer {
@@ -351,7 +397,8 @@ footer strong {
 
   .hero,
   .grid.two,
-  .grid.three {
+  .grid.three,
+  .bio-layout {
     grid-template-columns: 1fr;
   }
 
@@ -361,13 +408,12 @@ footer strong {
     gap: 36px;
   }
 
-  .item {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-
   .publication {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .stat-strip {
+    grid-template-columns: 1fr;
   }
 }
