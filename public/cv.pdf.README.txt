@@ -1,0 +1,1 @@
+Put your real CV at public/cv.pdf to enable the Download CV button.
